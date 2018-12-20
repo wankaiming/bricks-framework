@@ -1,0 +1,43 @@
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: org.bricks.framework.**.entity;
+server:
+  context-path: /
+  port: 8280
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bricks_framework_db?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: root
+  mvc:
+    favicon:
+      enabled: false
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp
+  redis: 
+    host: 192.168.101.100
+    port: 6379
+    database: 0
+    timeout: 5s
+    jedis:
+      pool:
+        max-idle: 500
+        min-idle: 10
+        max-wait: 10s
+        max-active: 500
+  rabbitmq:
+    host: 192.168.101.200
+    port: 5672
+    username: admin
+    password: admin123
+    virtual-host: /bricks-framework
+  resources:
+    chain:
+      strategy:
+        content:
+          paths: /static/**
+          enabled: true

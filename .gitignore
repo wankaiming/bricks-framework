@@ -1,0 +1,36 @@
+/target/
+/bricks-framework-web/bricks-framework-web-api/target/
+/bricks-framework-web/bricks-framework-web-backend/target/
+/bricks-framework-web/bricks-framework-web-frontend/target/
+/bricks-framework-web/bricks-framework-web-task/target/
+/bricks-framework-web/bricks-framework-web-api/target/
+/bricks-framework-web/bricks-framework-web-api/logs/
+/bricks-framework-web/bricks-framework-web-backend/logs/
+/bricks-framework-web/bricks-framework-web-frontend/logs/
+/bricks-framework-web/bricks-framework-web-task/logs/
+/bricks-framework-common/target/
+/bricks-framework-common/logs/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/

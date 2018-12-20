@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.bricks.framework-web</groupId>
+	<artifactId>bricks-framework-web</artifactId>
+	<packaging>pom</packaging>
+	<name>bricks-framework-web</name>
+
+	<parent>
+		<groupId>org.bricks.framework</groupId>
+		<artifactId>bricks-framework</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<modules>
+		<module>bricks-framework-web-api</module>
+		<module>bricks-framework-web-backend</module>
+		<module>bricks-framework-web-frontend</module>
+		<module>bricks-framework-web-task</module>
+	</modules>
+</project>

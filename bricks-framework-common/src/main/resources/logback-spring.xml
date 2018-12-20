@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+	<!-- 定义日志输出格式 -->
+	<property name="pattern"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger %msg%n" />
+	<!-- 定义日志输出编码 -->
+	<property name="charset" value="utf-8" />
+	<!-- 定义日志存放的根目录 -->
+	<property name="rootFilePath" value="${catalina.home:-.}/logs" />
+	<!-- 定义单个日志文件的大小 -->
+	<property name="maxFileSize" value="100MB" />
+	<!-- 定义日志文件最多保留多少天 -->
+	<property name="maxHistory" value="30" />
+	<!-- 定义日志文件最多占用的空间 -->
+	<property name="totalSizeCap" value="60GB" />
+
+	<appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${pattern}</pattern>
+		</layout>
+	</appender>
+
+	<appender name="fileDebugLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>${pattern}</pattern>
+			<charset>${charset}</charset>
+		</encoder>
+		<File>${rootFilePath}/debug.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${rootFilePath}/debug.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- 日志文件保留天数 -->
+			<maxHistory>${maxHistory}</maxHistory>
+			<!-- 日志最多占用服务器的硬盘空间大小 -->
+			<totalSizeCap>${totalSizeCap}</totalSizeCap>
+			<!-- 日志文件最大的大小 -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${maxFileSize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="fileInfoLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>${pattern}</pattern>
+			<charset>${charset}</charset>
+		</encoder>
+		<File>${rootFilePath}/info.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${rootFilePath}/info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- 日志文件保留天数 -->
+			<maxHistory>${maxHistory}</maxHistory>
+			<!-- 日志最多占用服务器的硬盘空间大小 -->
+			<totalSizeCap>${totalSizeCap}</totalSizeCap>
+			<!-- 日志文件最大的大小 -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${maxFileSize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="fileWarnLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>${pattern}</pattern>
+			<charset>${charset}</charset>
+		</encoder>
+		<File>${rootFilePath}/warn.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${rootFilePath}/warn.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- 日志文件保留天数 -->
+			<maxHistory>${maxHistory}</maxHistory>
+			<!-- 日志最多占用服务器的硬盘空间大小 -->
+			<totalSizeCap>${totalSizeCap}</totalSizeCap>
+			<!-- 日志文件最大的大小 -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${maxFileSize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="fileErrorLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>${pattern}</pattern>
+			<charset>${charset}</charset>
+		</encoder>
+		<File>${rootFilePath}/error.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${rootFilePath}/error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- 日志文件保留天数 -->
+			<maxHistory>${maxHistory}</maxHistory>
+			<!-- 日志最多占用服务器的硬盘空间大小 -->
+			<totalSizeCap>${totalSizeCap}</totalSizeCap>
+			<!-- 日志文件最大的大小 -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${maxFileSize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<logger name="org.springframework" level="info" />
+	<logger name="com.zaxxer" level="info" />
+	<logger name="io.netty" level="info" />
+	<logger name="org.hibernate" level="info" />
+
+	<root level="debug">
+		<appender-ref ref="consoleLog" />
+		<appender-ref ref="fileDebugLog" />
+		<appender-ref ref="fileInfoLog" />
+		<appender-ref ref="fileWarnLog" />
+		<appender-ref ref="fileErrorLog" />
+	</root>
+</configuration>
