@@ -12,6 +12,27 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/bricks_framework_db?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
     password: root
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      filters: stat
+      max-active: 100
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
   mvc:
     favicon:
       enabled: false
@@ -41,3 +62,13 @@ spring:
         content:
           paths: /static/**
           enabled: true
+  flyway: 
+     clean-disabled: true 
+     enabled: true
+     baseline-on-migrate: true
+     baseline-version: 1
+     locations: classpath:/db
+     out-of-order: true
+  
+
+          
