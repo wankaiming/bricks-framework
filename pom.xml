@@ -25,6 +25,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-boot-admin.version>2.0.4</spring-boot-admin.version>
+		<mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
+		<mybatis-generator-core.version>1.3.7</mybatis-generator-core.version>
+		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
+		<nacos-config-spring-boot-starter.version>0.2.1</nacos-config-spring-boot-starter.version>
 	</properties>
 
 	<dependencies>
@@ -99,7 +103,7 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.3.2</version>
+			<version>${mybatis-spring-boot-starter.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.zaxxer</groupId>
@@ -111,14 +115,14 @@
 		<dependency>
 			<groupId>org.mybatis.generator</groupId>
 			<artifactId>mybatis-generator-core</artifactId>
-			<version>1.3.7</version>
+			<version>${mybatis-generator-core.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>
-		
+			
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
@@ -127,7 +131,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid-spring-boot-starter</artifactId>
-			<version>1.1.10</version>
+			<version>${druid-spring-boot-starter.version}</version>
 		</dependency>
 
 		<dependency>
@@ -158,6 +162,12 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.alibaba.boot</groupId>
+		    <artifactId>nacos-config-spring-boot-starter</artifactId>
+		    <version>${nacos-config-spring-boot-starter.version}</version>
 		</dependency>
 
 	</dependencies>
