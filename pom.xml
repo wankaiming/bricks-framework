@@ -169,6 +169,21 @@
 		    <artifactId>nacos-config-spring-boot-starter</artifactId>
 		    <version>${nacos-config-spring-boot-starter.version}</version>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-elasticsearch</artifactId>
+        </dependency>
 
 	</dependencies>
 
@@ -247,4 +262,18 @@
 
 		</plugins>
 	</build>
+	
+	<repositories>
+		<repository>
+			<id>central-maven</id>
+			<url>http://central.maven.org/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 </project>
