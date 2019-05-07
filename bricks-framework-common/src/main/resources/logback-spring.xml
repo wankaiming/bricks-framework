@@ -153,6 +153,20 @@
 	<logger name="com.zaxxer" level="info" />
 	<logger name="io.netty" level="info" />
 	<logger name="org.hibernate" level="info" />
+	
+    <springProperty scope="context" name="logUrl" source="httpLog.url"
+                    defaultValue="localhost"/>
+	
+    <appender name="batchHttp" class="ch.qos.logback.ext.loggly.LogglyBatchAppender">
+        <endpointUrl>${logUrl}</endpointUrl>
+        <flushIntervalInSeconds>10</flushIntervalInSeconds>
+        <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
+            <jsonFormatter
+                    class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter">
+                <prettyPrint>true</prettyPrint>
+            </jsonFormatter>
+        </layout>
+    </appender>
 
 	<root level="debug">
 		<appender-ref ref="consoleLog" />
@@ -161,5 +175,6 @@
 		<appender-ref ref="fileInfoLog" />
 		<appender-ref ref="fileWarnLog" />
 		<appender-ref ref="fileErrorLog" />
+        <appender-ref ref="batchHttp" />
 	</root>
 </configuration>

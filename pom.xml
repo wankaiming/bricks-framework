@@ -29,6 +29,7 @@
 		<mybatis-generator-core.version>1.3.7</mybatis-generator-core.version>
 		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
 		<nacos-config-spring-boot-starter.version>0.2.1</nacos-config-spring-boot-starter.version>
+		<logback-ext-loggly.version>0.1.5</logback-ext-loggly.version>
 	</properties>
 
 	<dependencies>
@@ -183,6 +184,25 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-elasticsearch</artifactId>
+        </dependency>
+        
+        <dependency>
+		    <groupId>org.logback-extensions</groupId>
+		    <artifactId>logback-ext-loggly</artifactId>
+		    <version>${logback-ext-loggly.version}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		
+		 <dependency>
+            <groupId>ch.qos.logback.contrib</groupId>
+            <artifactId>logback-jackson</artifactId>
+            <version>${logback-ext-loggly.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback.contrib</groupId>
+            <artifactId>logback-json-classic</artifactId>
+            <version>${logback-ext-loggly.version}</version>
         </dependency>
 
 	</dependencies>
