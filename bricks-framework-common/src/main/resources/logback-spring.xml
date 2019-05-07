@@ -20,6 +20,30 @@
 			<pattern>${pattern}</pattern>
 		</layout>
 	</appender>
+	
+	<appender name="fileAllLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ALL</level>
+		</filter>
+		<encoder>
+			<pattern>${pattern}</pattern>
+			<charset>${charset}</charset>
+		</encoder>
+		<File>${rootFilePath}/all.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${rootFilePath}/all.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- 日志文件保留天数 -->
+			<maxHistory>${maxHistory}</maxHistory>
+			<!-- 日志最多占用服务器的硬盘空间大小 -->
+			<totalSizeCap>${totalSizeCap}</totalSizeCap>
+			<!-- 日志文件最大的大小 -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${maxFileSize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
 
 	<appender name="fileDebugLog"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -132,6 +156,7 @@
 
 	<root level="debug">
 		<appender-ref ref="consoleLog" />
+		<appender-ref ref="fileAllLog" />
 		<appender-ref ref="fileDebugLog" />
 		<appender-ref ref="fileInfoLog" />
 		<appender-ref ref="fileWarnLog" />
