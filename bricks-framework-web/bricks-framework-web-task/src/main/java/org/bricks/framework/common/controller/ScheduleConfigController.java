@@ -28,14 +28,14 @@ public class ScheduleConfigController {
 	@Autowired
 	private ScheduleTaskService scheduleTaskService;
 
-	@RequestMapping("list")
+	@RequestMapping("/list")
 	public String list(Map<String, Object> model) {
 		List<ScheduleTask> taskList = scheduleTaskService.getAllTask();
 		model.put("taskList", taskList);
 		return "scheduleConfig/list";
 	}
 
-	@RequestMapping("addTask")
+	@RequestMapping("/addTask")
 	@ResponseBody
 	public BaseDto addTask(HttpServletRequest request, ScheduleTask task) {
 		try {
@@ -81,7 +81,7 @@ public class ScheduleConfigController {
 		}
 	}
 
-	@RequestMapping("changeStatus")
+	@RequestMapping("/changeStatus")
 	@ResponseBody
 	public BaseDto changeStatus(Integer id, String cmd) {
 		Boolean flag = scheduleTaskService.changeStatus(id, cmd);
@@ -92,7 +92,7 @@ public class ScheduleConfigController {
 		}
 	}
 
-	@RequestMapping("updateCron")
+	@RequestMapping("/updateCron")
 	@ResponseBody
 	public BaseDto updateCron(Integer id, String cron) {
 		try {
@@ -109,7 +109,7 @@ public class ScheduleConfigController {
 		}
 	}
 
-	@RequestMapping("runTask")
+	@RequestMapping("/runTask")
 	@ResponseBody
 	public BaseDto runTask(Integer id) {
 		Boolean flag = scheduleTaskService.runTask(id);
@@ -120,7 +120,7 @@ public class ScheduleConfigController {
 		}
 	}
 	
-	@RequestMapping("delTask")
+	@RequestMapping("/delTask")
 	@ResponseBody
 	public BaseDto delTask(Integer id) {
 		Boolean flag = scheduleTaskService.deleteTask(id);
