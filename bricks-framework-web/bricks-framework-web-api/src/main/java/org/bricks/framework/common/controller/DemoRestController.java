@@ -1,4 +1,4 @@
-package org.bricks.framework.common.rest.controller;
+package org.bricks.framework.common.controller;
 
 import org.bricks.framework.common.dao.DemoEsRepository;
 import org.bricks.framework.common.dto.DemoTestDto;
