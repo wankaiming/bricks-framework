@@ -5,6 +5,7 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Document(indexName = "demo", type = "demo_test", shards = 1, replicas = 0, refreshInterval = "-1")
 public class DemoTestDto implements Serializable {
@@ -14,10 +15,10 @@ public class DemoTestDto implements Serializable {
 	@Id
 	private String id;
 	
-	@Field
+	@Field(index=true,type=FieldType.Text)
 	private String firstName;
 	
-	@Field
+	@Field(index=true,type=FieldType.Text)
 	private String lastName;
 
 	public String getId() {
