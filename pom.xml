@@ -30,6 +30,8 @@
 		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
 		<nacos-config-spring-boot-starter.version>0.2.1</nacos-config-spring-boot-starter.version>
 		<logback-ext-loggly.version>0.1.5</logback-ext-loggly.version>
+		<tiles.version>3.0.8</tiles.version>
+		<guava.version>21.0</guava.version>
 	</properties>
 
 	<dependencies>
@@ -205,6 +207,30 @@
             <version>${logback-ext-loggly.version}</version>
         </dependency>
 
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        
 	</dependencies>
 
 	<dependencyManagement>

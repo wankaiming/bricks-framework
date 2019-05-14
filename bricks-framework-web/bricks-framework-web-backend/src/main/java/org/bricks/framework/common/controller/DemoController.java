@@ -11,7 +11,7 @@ public class DemoController {
 	
 	@RequestMapping("/table")
 	public String list(Map<String, Object> model) {
-		return "demo/table";
+		return "demo.table";
 	}
 
 }

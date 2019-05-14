@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC 
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+
+	<definition name="common.layout.basic" template="/WEB-INF/pages/common/basic.jsp">
+	    <put-attribute name="title" value="" />
+	    <put-attribute name="script-header" value="/WEB-INF/pages/common/script_header.jsp" />
+		<put-attribute name="header" value="/WEB-INF/pages/common/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/pages/common/footer.jsp" />
+	</definition>
+	
+	<!-- 公共模块  -->
+	<definition name="common.base" extends="common.layout.basic">
+		<put-attribute name="title" value="公共模块" />
+	</definition>
+	
+	<definition name="common.*.*.*" extends="common.base">
+		<put-attribute name="body" value="/WEB-INF/pages/common/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="common.*.*" extends="common.base">
+		<put-attribute name="body" value="/WEB-INF/pages/common/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="common.*" extends="common.base">
+		<put-attribute name="body" value="/WEB-INF/pages/common/{1}.jsp" />
+	</definition>
+	
+	<!-- 示例模块  -->
+	<definition name="demo.base" extends="common.layout.basic">
+		<put-attribute name="title" value="示例模块 " />
+	</definition>
+	
+	<definition name="demo.*.*.*" extends="demo.base">
+		<put-attribute name="body" value="/WEB-INF/pages/demo/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="demo.*.*" extends="demo.base">
+		<put-attribute name="body" value="/WEB-INF/pages/demo/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="demo.*" extends="demo.base">
+		<put-attribute name="body" value="/WEB-INF/pages/demo/{1}.jsp" />
+	</definition>
+	
+</tiles-definitions>
