@@ -1,4 +1,4 @@
-package org.bricks.framework.common.config;
+package org.bricks.framework.common.component;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,7 +7,7 @@ import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 
 @Configuration
-public class ConfigurationForTiles {
+public class TilesConfig {
 
 	@Bean
 	public UrlBasedViewResolver tilesViewResolver() {
