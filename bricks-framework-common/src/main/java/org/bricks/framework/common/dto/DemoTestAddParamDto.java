@@ -10,7 +10,7 @@ public class DemoTestAddParamDto implements Serializable {
 	
 	private static final long serialVersionUID = -5593747470659210731L;
 	
-	private Integer id;
+	private String id;
 
 	@NotBlank(message="firstName不能为空")
 	@SafeTextOrHtml(message="firstName存在非法字符")
@@ -19,11 +19,11 @@ public class DemoTestAddParamDto implements Serializable {
 	@SafeTextOrHtml(message="lastName存在非法字符")
 	private String lastName;
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
