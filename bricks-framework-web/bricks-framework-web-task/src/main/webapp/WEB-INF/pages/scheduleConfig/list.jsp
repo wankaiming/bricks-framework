@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="/base/js/jquery/jquery-2.1.1.min.js"></script>
+<script src="${urls.getForLookupPath('/base/js/jquery/jquery-2.1.1.min.js')}"></script>
 
 <style>
 .list_table {

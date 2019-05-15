@@ -60,7 +60,7 @@ spring:
     chain:
       strategy:
         content:
-          paths: /static/**
+          paths: /**
           enabled: true
   flyway: 
      clean-disabled: true 
