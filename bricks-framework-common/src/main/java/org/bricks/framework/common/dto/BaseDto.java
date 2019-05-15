@@ -13,7 +13,7 @@ public class BaseDto implements Serializable {
 	private Boolean flag;
 
 	public BaseDto() {
-		this.msg = "";
+		this.msg = "OK";
 		this.code = "0";
 		this.flag = true;
 	}
@@ -25,6 +25,12 @@ public class BaseDto implements Serializable {
 
 	public BaseDto(Boolean flag, String msg) {
 		this.flag = flag;
+		this.msg = msg;
+	}
+	
+	public BaseDto(Boolean flag, String code, String msg) {
+		this.flag = flag;
+		this.code = code;
 		this.msg = msg;
 	}
 
