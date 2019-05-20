@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue Ajax示例 </title>
+<script src="./js/vue/vue.min-2.4.2.js"></script>
+<script src="./js/vue-resource/vue-resource.min-1.5.1.js"></script>
+</head>
+<body>
+<div id="box">
+	<input type="button" @click="get()" value="测试">
+</div>
+<script type = "text/javascript">
+window.onload = function(){
+var vm = new Vue({
+    el:'#box',
+    data:{
+        msg:'Hello World!',
+    },
+    methods:{
+        get:function(){
+            //发送get请求
+            this.$http.get('./ajax_info.txt').then(function(res){
+                alert(res.body);    
+            },function(){
+                console.log('请求失败处理');
+            });
+        }
+    }
+});
+}
+</script>
+</body>
+</html>
