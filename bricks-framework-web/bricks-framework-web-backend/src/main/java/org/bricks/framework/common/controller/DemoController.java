@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/demo")
-public class DemoController {
+public class DemoController extends BaseBackendController{
 	
 	@RequestMapping("/table")
 	public String list(Map<String, Object> model) {

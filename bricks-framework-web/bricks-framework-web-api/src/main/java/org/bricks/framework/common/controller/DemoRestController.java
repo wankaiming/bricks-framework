@@ -21,7 +21,7 @@ import com.alibaba.nacos.api.config.annotation.NacosValue;
 
 @RestController
 @RequestMapping(value = "/demo")
-public class DemoRestController {
+public class DemoRestController extends BaseRestController {
 
 	@NacosValue(value = "${name:哈哈}", autoRefreshed = true)
 	private String name;
