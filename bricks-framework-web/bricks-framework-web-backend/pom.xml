@@ -3,19 +3,62 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<artifactId>bricks-framework-web-backend</artifactId>
+	<packaging>war</packaging>
+	<name>bricks-framework-web-backend</name>
+	
 	<parent>
 		<groupId>org.bricks.framework</groupId>
 		<artifactId>bricks-framework-web</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>bricks-framework-web-backend</artifactId>
-	<packaging>war</packaging>
-	<name>bricks-framework-web-backend</name>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.bricks.framework</groupId>
 			<artifactId>bricks-framework-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+	
+		<!-- Mybatis Generator 依赖 -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+		</dependency>
+		
+		<!-- Flyway数据库版本管理 -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		
+		<!-- Tiles模板依赖 -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+		</dependency>
+		
+		<!-- 支持jsp需要的依赖 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+			
 	</dependencies>
 </project>

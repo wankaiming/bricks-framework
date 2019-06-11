@@ -85,8 +85,7 @@ public class IPFilter implements Filter {
 				Long currentTimeMillis = System.currentTimeMillis();
 				if (currentTimeMillis - ipAccessTime <= MIN_SAFE_TIME) {
 					limitedIpMap.put(ip, currentTimeMillis + LIMITED_TIME_MILLIS);
-					request.setAttribute("remainingTime",
-							((LIMITED_TIME_MILLIS / 1000) + (LIMITED_TIME_MILLIS % 1000 > 0 ? 1 : 0)));
+					request.setAttribute("remainingTime", LIMITED_TIME_MILLIS / 1000);
 					logger.info("ip访问过于频繁：" + ip);
 					request.getRequestDispatcher("/error/requestLimit").forward(request, response);
 					return;
