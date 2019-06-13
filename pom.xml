@@ -35,6 +35,7 @@
 		<tomcat-embed-jasper.version>9.0.14</tomcat-embed-jasper.version>
 		<quartz.version>2.3.0</quartz.version>
 		<guava.version>21.0</guava.version>
+		<start-class>org.bricks.framework.Application</start-class>
 	</properties>
 
 	<dependencies>
@@ -301,6 +302,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>  
+				  <mainClass>${start-class}</mainClass>  
+				  <layout>WAR</layout>  
+				</configuration>  
+				<executions>  
+				  <execution>  
+				    <goals>  
+				      <goal>repackage</goal>  
+				    </goals>  
+				  </execution>  
+				</executions>  
 			</plugin>
 
 		</plugins>

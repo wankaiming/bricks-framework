@@ -14,11 +14,6 @@
 	</parent>
 	
 	<dependencies>
-		<dependency>
-			<groupId>org.bricks.framework</groupId>
-			<artifactId>bricks-framework-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		
 		<!-- 支持jsp需要的依赖 -->
 		<dependency>

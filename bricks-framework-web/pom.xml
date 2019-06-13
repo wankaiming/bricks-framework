@@ -20,4 +20,12 @@
 		<module>bricks-framework-web-task</module>
 	</modules>
 	
+	<dependencies>
+		<dependency>
+			<groupId>org.bricks.framework</groupId>
+			<artifactId>bricks-framework-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	
 </project>
