@@ -28,4 +28,27 @@
 		</dependency>
 	</dependencies>
 	
+	<build>
+	    <plugins>
+	    
+	    	<!--spring boot maven 打包 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>  
+				  <mainClass>${start-class}</mainClass>  
+				  <layout>WAR</layout>
+				</configuration>  
+				<executions>
+				  <execution>
+				    <goals>
+				      <goal>repackage</goal>
+				    </goals>
+				  </execution>
+				</executions>
+			</plugin>
+	
+	    </plugins>
+	</build>
+			
 </project>

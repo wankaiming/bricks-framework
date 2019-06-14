@@ -245,6 +245,7 @@
 	</dependencyManagement>
 
 	<build>
+	
 		<plugins>
 		
 			<!-- 指定JDK版本 -->
@@ -259,22 +260,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-
-			<!-- 收集web应用所有的依赖，类和资源文件，然后把它们打包归档 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<webResources>
-						<resource>
-							<filtering>true</filtering>
-							<directory>src/main/webapp</directory>
-						</resource>
-					</webResources>
-					<warSourceDirectory>src/main/webapp</warSourceDirectory>
-				</configuration>
-			</plugin>
-
+			
 			<!--打包时跳过单元测试 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -283,39 +269,9 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-
-			<!--打包时同时生成源码 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>verify</phase>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			
-			<!--spring boot maven 打包 -->
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>  
-				  <mainClass>${start-class}</mainClass>  
-				  <layout>WAR</layout>  
-				</configuration>  
-				<executions>  
-				  <execution>  
-				    <goals>  
-				      <goal>repackage</goal>  
-				    </goals>  
-				  </execution>  
-				</executions>  
-			</plugin>
-
 		</plugins>
+		
 	</build>
 	
 	<repositories>
