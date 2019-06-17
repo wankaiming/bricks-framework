@@ -7,3 +7,7 @@
 # ElasticSearch 安装
 到 https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.12.zip 下载，下载后解压即安装完成，然后进入解压目录后的bin目录执行elasticsearch.bat或elasticsearch启动ElasticSearch。访问 http://127.0.0.1:9200 则可返回一些基本信息。
 ## 备注：使用的ElasticSearch服务版本最好要跟spring boot里面使用的ElasticSearch版本一致。
+
+# 启动命令可用的参数
+--spring.profiles.active=test 激活测试环境的配置
+--spring.config.location=xx 外部配置文件路径
