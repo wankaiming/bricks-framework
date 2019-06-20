@@ -11,7 +11,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.6.RELEASE</version>
+		<version>2.1.3.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -27,7 +27,7 @@
 		<mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
 		<mybatis-generator-core.version>1.3.7</mybatis-generator-core.version>
 		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
-		<nacos-config-spring-boot-starter.version>0.2.1</nacos-config-spring-boot-starter.version>
+		<spring-cloud-starter-alibaba-nacos-config.version>0.2.2.RELEASE</spring-cloud-starter-alibaba-nacos-config.version>
 		<logback-ext-loggly.version>0.1.5</logback-ext-loggly.version>
 		<tiles.version>3.0.8</tiles.version>
 		<flyway-core.version>5.2.4</flyway-core.version>
@@ -35,6 +35,8 @@
 		<tomcat-embed-jasper.version>9.0.14</tomcat-embed-jasper.version>
 		<quartz.version>2.3.0</quartz.version>
 		<guava.version>21.0</guava.version>
+		<spring-cloud-dependencies.version>Greenwich.RELEASE</spring-cloud-dependencies.version>
+		<spring-cloud-alibaba-dependencies.version>0.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
 		<start-class>org.bricks.framework.Application</start-class>
 	</properties>
 
@@ -59,17 +61,11 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- Nacos 动态服务发现、配置管理和服务管理平台，目前仅使用了配置管理 -->
+		<!-- Nacos 实现应用的外部化配置 -->
 		<dependency>
-			<groupId>com.alibaba.boot</groupId>
-			<artifactId>nacos-config-spring-boot-starter</artifactId>
-			<version>${nacos-config-spring-boot-starter.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.guava</groupId>
-					<artifactId>guava</artifactId>
-				</exclusion>
-			</exclusions>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		    <!-- <version>${spring-cloud-starter-alibaba-nacos-config.version}</version> -->
 		</dependency>
 		
 		<!-- logback 使用http协议将日志推送到日志服务器 -->
@@ -241,6 +237,24 @@
 				</exclusions>
 			</dependency>
 			
+            <!--Spring Cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
+            <!--Spring Cloud Alibaba-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 
@@ -276,15 +290,14 @@
 	
 	<repositories>
 		<repository>
-			<id>central-maven</id>
-			<url>http://central.maven.org/maven2/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+            <id>aliyun maven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 	</repositories>
 
 </project>

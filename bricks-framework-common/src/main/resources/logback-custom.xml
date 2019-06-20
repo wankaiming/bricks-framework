@@ -155,7 +155,7 @@
 	<logger name="org.hibernate" level="info" />
 	
     <springProperty scope="context" name="logUrl" source="httpLog.url"
-                    defaultValue="localhost"/>
+                    defaultValue="http://127.0.0.1:8080"/>
 	
     <appender name="batchHttp" class="ch.qos.logback.ext.loggly.LogglyBatchAppender">
         <endpointUrl>${logUrl}</endpointUrl>
