@@ -11,6 +11,9 @@
 # 启动命令可用的参数
 --spring.profiles.active=test 激活测试环境的配置
 --spring.config.location=xx 外部配置文件路径
+-Xms512m JVM初始分配的堆内存大小，默认是物理内存的1/64。
+-Xmx2048m JVM最大分配的堆内存大小，默认是物理内存的1/4。
+-Dfile.encoding=UTF-8 指定jvm默认编码
 
 # 配置中心需要建立两个配置文件
 ## 第一个配置文件
