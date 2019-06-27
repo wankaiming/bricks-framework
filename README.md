@@ -17,6 +17,7 @@
 
 # 配置中心需要建立两个配置文件
 ## 第一个配置文件
+```
 Data ID: application.yml 
 Group: DEFAULT_GROUP
 yaml内容:
@@ -101,11 +102,13 @@ httpLog:
   url: http://127.0.0.1:8000/log
 logging:
     config: classpath:logback-custom.xml
-
+```
 
 
 ## 第二个配置文件
+```
 Data ID: common.yml
 Group: DEFAULT_GROUP
 yaml内容:
 name: 呵呵dev
+```
