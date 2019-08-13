@@ -17,7 +17,7 @@ public class SafeTextOrHtmlValidator implements ConstraintValidator<SafeTextOrHt
 
 	private static final String patternEvent = "([\\s\\S]*)(onafterprint|onbeforeprint|onbeforeonload|onblur|onerror|onfocus|onhaschange|onload|onmessage|onoffline|ononline|onpagehide|onpageshow|onpopstate|onredo|onresize|onstorage|onundo|onunload|onblur|onchange|oncontextmenu|onfocus|onformchange|onforminput|oninput|oninvalid|onreset|onselect|onsubmit|onkeydown|onkeypress|onkeyup|onclick|ondblclick|ondrag|ondragend|ondragenter|ondragleave|ondragover|ondragstart|ondrop|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|onmousewheel|onscroll|onabort|oncanplay|oncanplaythrough|ondurationchange|onemptied|onended|onerror|onloadeddata|onloadedmetadata|onloadstart|onpause|onplay|onplaying|onprogress|onratechange|onreadystatechange|onseeked|onseeking|onstalled|onsuspend|ontimeupdate|onvolumechange|onwaiting|onshow|ontoggle)([\\s]*)\\=([\\s\\S]*)";
 
-	private static final String patternScrpit = "([\\s\\S]*)\\<([\\s]*)script([\\s]*)\\>([\\s\\S]*)\\<([\\s]*)\\/([\\s]*)script([\\s]*)\\>([\\s\\S]*)";
+	private static final String patternScrpit = "([\\s\\S]*)\\<([\\s]*)script([\\s\\S]*)\\>([\\s\\S]*)\\<([\\s]*)\\/([\\s]*)script([\\s]*)\\>([\\s\\S]*)";
 
 	private static final String patternJavaScrpit = "([\\s\\S]*)javascript([\\s]*)\\:([\\s\\S]*)";
 
