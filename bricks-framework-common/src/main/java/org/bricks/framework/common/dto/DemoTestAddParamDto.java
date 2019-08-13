@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import javax.validation.constraints.NotBlank;
 
-import org.bricks.framework.common.validator.SafeTextOrHtml;
-
 public class DemoTestAddParamDto implements Serializable {
 	
 	private static final long serialVersionUID = -5593747470659210731L;
@@ -13,10 +11,8 @@ public class DemoTestAddParamDto implements Serializable {
 	private String id;
 
 	@NotBlank(message="firstName不能为空")
-	@SafeTextOrHtml(message="firstName存在非法字符")
 	private String firstName;
 	
-	@SafeTextOrHtml(message="lastName存在非法字符")
 	private String lastName;
 
 	public String getId() {

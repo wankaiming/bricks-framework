@@ -1,4 +1,4 @@
-package org.bricks.framework.common.component;
+package org.bricks.framework.common.utils;
 
 import java.util.regex.Pattern;
 
