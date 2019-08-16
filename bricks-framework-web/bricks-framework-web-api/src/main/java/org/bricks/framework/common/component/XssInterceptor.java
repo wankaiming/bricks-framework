@@ -17,7 +17,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class XssInterceptor extends HandlerInterceptorAdapter {
 
 	protected final Logger log = LoggerFactory.getLogger(getClass());
-	
+
 	/**
 	 * xss 拦截
 	 * 
@@ -54,13 +54,13 @@ public class XssInterceptor extends HandlerInterceptorAdapter {
 			if (!isUpload(request)) {
 
 				String body = new BodyReaderHttpServletRequestWrapper(request).getBodyString(request);
-				
+
 				if (log.isDebugEnabled()) {
 					if (StringUtils.isNotBlank(request.getQueryString())) {
 						url += "?" + request.getQueryString();
 					}
-					
-					StringBuilder logRender = new StringBuilder("Outbound Message\n");
+
+					StringBuilder logRender = new StringBuilder("Inbound Message\n");
 					logRender.append("----------------------------\n");
 					logRender.append("ThreadName: ").append(Thread.currentThread().getName()).append("\n");
 					logRender.append("RequestUrl: ").append(url).append("\n");
@@ -77,17 +77,31 @@ public class XssInterceptor extends HandlerInterceptorAdapter {
 					}
 				}
 			}
-			
+
+		} else {
+			if (log.isDebugEnabled()) {
+				if (StringUtils.isNotBlank(request.getQueryString())) {
+					url += "?" + request.getQueryString();
+				}
+
+				StringBuilder logRender = new StringBuilder("Inbound Message\n");
+				logRender.append("----------------------------\n");
+				logRender.append("ThreadName: ").append(Thread.currentThread().getName()).append("\n");
+				logRender.append("RequestUrl: ").append(url).append("\n");
+				logRender.append("----------------------------------------\n");
+				log.debug(logRender.toString());
+			}
 		}
 
 		return true;
 	}
 
 	private boolean isUpload(HttpServletRequest request) {
-		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
-        if (multipartResolver.isMultipart(request)) {
-        	return true;
-        }
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+				request.getSession().getServletContext());
+		if (multipartResolver.isMultipart(request)) {
+			return true;
+		}
 		return false;
 	}
 }
