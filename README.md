@@ -29,6 +29,9 @@ server:
   port: 8280
   tomcat:
     uri-encoding: UTF-8
+  jsp-servlet:
+      init-parameters:
+          development: true
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
