@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -29,9 +29,9 @@
 	</dependencies>
 	
 	<build>
-	    <plugins>
+		<plugins>
 	    
-	    	<!--spring boot maven 打包 -->
+			<!--spring boot maven 打包 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -41,14 +41,14 @@
 				</configuration>  
 				<executions>
 				  <execution>
-				    <goals>
-				      <goal>repackage</goal>
-				    </goals>
+					<goals>
+					  <goal>repackage</goal>
+					</goals>
 				  </execution>
 				</executions>
 			</plugin>
 	
-	    </plugins>
+		</plugins>
 	</build>
 			
 </project>

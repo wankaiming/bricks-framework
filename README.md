@@ -1,6 +1,32 @@
 # bricks-framework
 积木式（或者说模块式\插件式）网站框架，可以合并部署，也可以分开部署，页面样式标准化，引入数据库sql版本管理，统一配置服务，统一日志收集服务，引入防止频繁访问机制，部署方式容器化
 
+## 后端技术：
+功能|组件
+:-|:-
+打包|spring-boot-maven-plugin
+热部署|spring-boot-devtools
+单元测试|spring-boot-starter-test
+配置中心|Nacos
+日志框架|Logback
+消息队列|RabbitMQ
+缓存|Redis
+搜索引擎|Elasticsearch
+连接池|Druid
+持久层框架|Mybatis
+Google Java工具类|Guava
+定时任务|Quartz
+Mybatis实体类生成工具|Mybatis Generator
+数据库版本管理|Flyway
+JSP布局框架|Tiles
+
+## 前端技术
+功能|组件
+:-|:-
+PC前端JavaScript库|jQuery
+PC前端框架|Bootstrap
+移动端渐进式框架|Vue
+
 # Nacos 安装
 到 https://github.com/alibaba/nacos/releases 下载最新版，下载后解压即安装完成，然后进入解压目录后的bin目录执行startup.cmd或startup.sh启动Nacos。访问Nacos服务 http://127.0.0.1:8848/nacos/#/login 默认情况用户名密码都是nacos。
 
