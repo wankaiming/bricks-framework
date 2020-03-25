@@ -238,31 +238,30 @@
 				</exclusions>
 			</dependency>
 			
-            <!--Spring Cloud-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            
-            <!--Spring Cloud Alibaba-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            
-            <!-- 文件上传需要的依赖 -->
-            <dependency>
-			    <groupId>commons-fileupload</groupId>
-			    <artifactId>commons-fileupload</artifactId>
-			    <version>${commons-fileupload.version}</version>
+			<!--Spring Cloud-->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
-			
+
+			<!--Spring Cloud Alibaba-->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- 文件上传需要的依赖 -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -298,14 +297,14 @@
 	
 	<repositories>
 		<repository>
-            <id>aliyun maven</id>
-            <name>aliyun maven</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
+		    <id>aliyun maven</id>
+		    <name>aliyun maven</name>
+		    <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		    <layout>default</layout>
+		    <snapshots>
+			<enabled>false</enabled>
+		    </snapshots>
+		</repository>
 	</repositories>
 
 </project>
